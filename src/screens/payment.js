@@ -26,7 +26,7 @@ export default function Payment() {
 
                    
                     <View style={styles.card_details}>
-                       
+                       {ProductShow()}
                     </View>
                     <View style={styles.card_details}>
 
