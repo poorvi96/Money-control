@@ -11,9 +11,11 @@ export default function Payment() {
             {   
             product.map(d=>(
                 <>
+                <View style={styles.cardView}>
               <Text>{d.card_name}</Text>
               <Text>{d.DueDate}</Text>
               <Text>{d.Due_Payment}</Text>
+              </View>
                 </>
              ))
             }  
@@ -78,6 +80,11 @@ const styles = StyleSheet.create({
     },
     text:{
         margin:10
+    },
+    cardView:{
+        width:"100%",
+        height:200,
+        backgroundColor:'blue'
     }
 
 })
