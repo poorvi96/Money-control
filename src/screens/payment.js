@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, StyleSheet, Dimensions, ScrollView } from 'react-native'
+import { Text, View, StyleSheet, Dimensions, ScrollView, TouchableOpacity } from 'react-native'
 import { product } from '../Data/data';
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -12,9 +12,17 @@ export default function Payment() {
             product.map(d=>(
                 <>
                 <View style={styles.cardView}>
-              <Text>{d.card_name}</Text>
-              <Text>{d.DueDate}</Text>
-              <Text>{d.Due_Payment}</Text>
+               <View style={styles.duedate}>
+              <Text style={styles.text}>{d.card_name}</Text>
+              <Text style={styles.text}>=DueDate({d.DueDate})</Text>
+              </View>
+              <View style={styles.duepayment_view}>
+              <Text style={styles.duepay}>Due Payment Rs.{d.Due_Payment}/-</Text>
+
+              <TouchableOpacity style={styles.payview}>
+              <View >
+              <Text style={styles.pay}>  Pay Now</Text></View></TouchableOpacity>
+              </View>
               </View>
                 </>
              ))
@@ -65,17 +73,54 @@ const styles = StyleSheet.create({
     product_text: {
         margin: 20
     },
-    card:{
-        backgroundColor:'yellow'
+   
+    cardView:{
+        width:w*.9,
+        height:200,
+        backgroundColor:'skyblue',
+        marginTop:20,
+        borderRadius:30,
+        marginHorizontal:20,
+        padding:20
+        
     },
     text:{
-        margin:10
+        fontSize:20,
+        backgroundColor:'orange',
+        
+        
     },
-    cardView:{
-        width:"100%",
-        height:200,
+    duedate:{
+        flexDirection:'row',
+        alignItems:'center',
+        alignItems:'center',
+        justifyContent:'center',
+        marginVertical:20
+       
+    },
+    duepay:{
+        fontSize:15,
+        color:'white',
+        flex:1,
+
+    },
+    payview:{
+       
+        
+        flex:1,
+        marginLeft:100,
+        marginTop:20,
         backgroundColor:'green',
-        marginTop:30
+        padding:10,
+
+    },
+    duepayment_view:{
+         flexDirection:'row'
+    },
+    pay:{
+        fontSize:20,
+        color:'white',
     }
+
 
 })
