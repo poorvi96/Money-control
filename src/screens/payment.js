@@ -29,18 +29,8 @@ export default function Payment() {
                     <View style={styles.userview}>
                         <Text style={styles.usertext}>Hey Poorvi! 2023-08-24</Text>
                     </View>
-
-                   <View style={styles.card}>
-                    <View style={styles.card_details}>
-                       <Text style={styles.text}>{ProductShow()}</Text>
-                    </View>
-                    <View style={styles.card_details}>
-
-                    </View>
-                    <View style={styles.card_details}>
-
-                    </View>
-                    </View>
+                    {ProductShow()}
+                   
 
                 </View>
             </ScrollView>
@@ -84,7 +74,8 @@ const styles = StyleSheet.create({
     cardView:{
         width:"100%",
         height:200,
-        backgroundColor:'blue'
+        backgroundColor:'green',
+        marginTop:30
     }
 
 })
