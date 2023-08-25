@@ -2,7 +2,7 @@ import React from 'react'
 import {Text,View,StyleSheet,Dimensions} from 'react-native'
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
-export default function Expenses(){
+export default function Expense(){
     return(
         <View style={styles.userview}>
                 <Text style={styles.usertext}>Hey Poorvi! 2023-08-24</Text>
@@ -19,14 +19,13 @@ const styles=StyleSheet.create({
         alignItems:'center',
         marginHorizontal:20,
         marginVertical:10
-        
-        
+
+
     },
     usertext: {
         fontSize: 20,
         margin: 20,
-        color: 'white', 
-    },
-    
-})
+        color: 'white', 
+    },
 
+})

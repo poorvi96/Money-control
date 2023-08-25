@@ -9,7 +9,7 @@ export default function Payment(){
                 <Text style={styles.usertext}>Hey Poorvi! 2023-08-24</Text>
             </View>
 
-            
+
             </>
     )
 }
@@ -22,14 +22,13 @@ const styles=StyleSheet.create({
         alignItems:'center',
         marginHorizontal:20,
         marginVertical:10
-        
-        
+
+
     },
     usertext: {
         fontSize: 20,
         margin: 20,
-        color: 'white', 
-    },
-    
-})
+        color: 'white', 
+    },
 
+})
