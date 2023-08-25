@@ -4,6 +4,17 @@ import { product } from '../Data/data';
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 export default function Payment() {
+    function ProductShow(){
+        return<>
+            {   
+            product.map(d=>(
+                <>
+              <Text>{d.card_name}</Text>
+                </>
+             ))
+            }  
+        </> 
+    }
     
     return (
         <>
