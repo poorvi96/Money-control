@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
         flex:1,
         marginLeft:100,
         marginTop:20,
-        backgroundColor:'green',
+        backgroundColor:'#27ACF8',
         padding:10,
 
     },
