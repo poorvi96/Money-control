@@ -12,6 +12,8 @@ export default function Payment() {
             product.map(d=>(
                 <>
               <Text>{d.card_name}</Text>
+              <Text>{d.DueDate}</Text>
+              <Text>{d.Due_Payment}</Text>
                 </>
              ))
             }  
@@ -26,15 +28,16 @@ export default function Payment() {
                         <Text style={styles.usertext}>Hey Poorvi! 2023-08-24</Text>
                     </View>
 
-                   
+                   <View style={styles.card}>
                     <View style={styles.card_details}>
-                       
+                       <Text style={styles.text}>{ProductShow()}</Text>
                     </View>
                     <View style={styles.card_details}>
 
                     </View>
                     <View style={styles.card_details}>
 
+                    </View>
                     </View>
 
                 </View>
@@ -69,6 +72,12 @@ const styles = StyleSheet.create({
     },
     product_text: {
         margin: 20
+    },
+    card:{
+        backgroundColor:'yellow'
+    },
+    text:{
+        margin:10
     }
 
 })
