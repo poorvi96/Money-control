@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         marginLeft:w*.06,
         marginVertical:w*.03,
         alignItems: 'center',
-        backgroundColor: '#454A8C#6600FF',
+        backgroundColor: '#454A8C',
         
         // marginTop:30
     },
