@@ -39,6 +39,7 @@ export default function PaymentScreen() {
             <ScrollView>
                 <View style={styles.scroll_view}>
                     <View style={styles.userview}>
+                        <Text style={styles.usertext}>{w}</Text>
                         <Text style={styles.usertext}>Hey Poorvi! 2023-08-24</Text>
                     </View>
                     {ProductShow()}
