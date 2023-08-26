@@ -9,13 +9,15 @@ export default function Header() {
                 <View >
                     <Text style={styles.header_left}> Money Control</Text>
                 </View>
+                <TouchableOpacity>
                 <View style={styles.header_right}>
-                    <TouchableOpacity>
+                    
                         <Text style={styles.text}>
                             add
                         </Text>
-                    </TouchableOpacity>
+                  
                 </View>
+                </TouchableOpacity>
 
             </View>
         </>
