@@ -2,8 +2,8 @@ import React from 'react'
 import { Text, View, StyleSheet, Dimensions, Image } from 'react-native'
 import { ExpData } from '../Data/data';
 import { ScrollView } from 'react-native';
-const w = Dimensions.get('window').width;
-const h = Dimensions.get('window').height;
+const w = Dimensions.get('screen').width;
+const h = Dimensions.get('screen').height;
 export default function Expense() {
 
     function ExpDataShow() {
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         
     },
     text:{
-         marginHorizontal:w*.08,
+         marginHorizontal:w*.06,
         marginVertical:h*.035,
         color:'white',
         flex:w*.05
