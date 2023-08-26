@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
 
     cardView: {
         width: w * .9,
-        height: 200,
+        height: h*.25,
         backgroundColor: 'skyblue',
         marginTop: 20,
         borderRadius: 30,
@@ -99,28 +99,30 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignItems: 'center',
         justifyContent: 'center',
-        marginVertical: 20
+        marginVertical: h*.025
 
     },
     duepay: {
         fontSize: 15,
         color: 'white',
-        flex: 1,
+         flex:.5
 
     },
     payview: {
-        flex:.8,
+        flex:.7,
         backgroundColor: '#27ACF8',
         alignItems:'center',
         justifyContent:'center',
         borderRadius:20,
+       
     },
     payviewbtn: {
         
         backgroundColor: '#27ACF8',
     },
     duepayment_view: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        marginVertical:h*.03
     },
     pay: {
         fontSize:w*.04,
