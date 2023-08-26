@@ -1,8 +1,8 @@
 import React from 'react'
 import { Text, View, StyleSheet, Dimensions, ScrollView, TouchableOpacity } from 'react-native'
 import { product } from '../Data/data';
-const w = Dimensions.get('window').width;
-const h = Dimensions.get('window').height;
+const w = Dimensions.get('screen').width;
+const h = Dimensions.get('screen').height;
 //project
 export default function PaymentScreen() {
 
