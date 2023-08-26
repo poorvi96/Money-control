@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, Dimensions, ScrollView, TouchableOpacity } from
 import { product } from '../Data/data';
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
+//project
 export default function Payment() {
 
 
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     pay: {
-        fontSize: 20,
+        fontSize:w*.02,
         color: 'white',
     }
 
