@@ -4,7 +4,7 @@ import { product } from '../Data/data';
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 //project
-export default function Payment() {
+export default function PaymentScreen() {
 
 
     function ProductShow() {
