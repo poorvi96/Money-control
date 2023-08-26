@@ -16,18 +16,15 @@ export default function Expense() {
                             <Text style={styles.card}>{d.card_name}</Text>
 
                             <View style={styles.textView}>
-                                <Text style={styles.text}>Limit</Text>
-                                <Text style={styles.text}>Expenses</Text>
-                            </View>
-
-                            <View style={styles.RsView}>
-                                <Text  style={styles.Rs}> Rs{d.Limit_Rs} /-</Text>
-                                <Text style={styles.Rs}>Rs{d.Expense_Rs}/-</Text>
-                            <View style={styles.ImageView}>
+                                <Text style={styles.text}>Limit Rs.{d.Limit_Rs}</Text>
+                                <Text style={styles.text}>Expenses Rs.{d.Expense_Rs}</Text>
+                                <View style={styles.ImageView}>
                                 <Image source={d.Eye} style={styles.Image} />
-
+                                </View>
                             </View>
-                            </View>
+                                
+                                
+                          
 
 
                         </View>
@@ -69,7 +66,7 @@ const styles = StyleSheet.create({
     mainView: {
         width: w * .9,
         height: h * .25,
-        borderRadius: 35,
+        borderRadius:30,
         // marginLeft:20,
         marginLeft:w*.06,
         marginVertical:w*.03,
@@ -90,10 +87,9 @@ const styles = StyleSheet.create({
     },
     textView:{
 
-        flexDirection:'row',
+        flexDirection:'row'
 
-        right:w*.12,
-        marginTop:w*.15
+       
     },
     RsView:{
         flexDirection:'row',
@@ -103,8 +99,11 @@ const styles = StyleSheet.create({
         
     },
     text:{
-        marginHorizontal:w*.09,
-        color:'white'
+         marginHorizontal:w*.08,
+        marginVertical:h*.035,
+        color:'white',
+        flex:w*.05
+       
     },
     Rs:{
         marginHorizontal:w*.03,
@@ -112,14 +111,18 @@ const styles = StyleSheet.create({
        // left
     },
     ImageView:{
-        width:w*.16,
-        alignItems:'center',
+        height:h*.06,
+      width:w*.2,
         backgroundColor:'#3377ff',
         borderRadius:10,
-       bottom:w*.02,
-        padding:w*.01
+        alignItems:'center',
+        justifyContent:'center',
+        top:h*.02,
+        marginVertical:h*.01,
+        marginHorizontal:w*.03,
+      
     },
-
+    
 
 
 })
