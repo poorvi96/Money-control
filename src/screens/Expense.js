@@ -68,13 +68,14 @@ const styles = StyleSheet.create({
     },
     mainView: {
         width: w * .9,
-        height: h * .28,
+        height: h * .25,
         borderRadius: 35,
         // marginLeft:20,
         marginLeft:w*.06,
         marginVertical:w*.03,
         alignItems: 'center',
-        backgroundColor: '#454A8C',
+        backgroundColor: '#454A8C#6600FF',
+        
         // marginTop:30
     },
     card:{
@@ -102,11 +103,11 @@ const styles = StyleSheet.create({
         
     },
     text:{
-        marginHorizontal:w*.1,
+        marginHorizontal:w*.09,
         color:'white'
     },
     Rs:{
-        marginHorizontal:w*.04,
+        marginHorizontal:w*.03,
         color:'white',
        // left
     },
