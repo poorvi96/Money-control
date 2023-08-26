@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     card_details: {
         width: w * .93,
         height: h * .3,
-        backgroundColor: 'skyblue',
+        backgroundColor: 'blue',
         margin: 15,
         borderRadius: 20,
 
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     cardView: {
         width: w * .9,
         height: h*.25,
-        backgroundColor: 'skyblue',
+        backgroundColor: '#3d0099',
         marginTop: 20,
         borderRadius: 30,
         marginHorizontal: 20,
@@ -89,8 +89,8 @@ const styles = StyleSheet.create({
 
     },
     text: {
-        fontSize: w*.05,
-        backgroundColor: 'orange',
+        fontSize: w*.043,
+        backgroundColor: 'yellow',
 
 
     },
