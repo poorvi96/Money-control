@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     pay: {
-        fontSize:w*.02,
+        fontSize:w*.04,
         color: 'white',
     }
 
