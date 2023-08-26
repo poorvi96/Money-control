@@ -19,11 +19,14 @@ export default function PaymentScreen() {
                             </View>
                             <View style={styles.duepayment_view}>
                                 <Text style={styles.duepay}>Due Payment Rs.{d.Due_Payment}/-</Text>
-
-                                <TouchableOpacity style={styles.payview}>
-                                    <View >
-                                        <Text style={styles.pay}>  Pay Now</Text></View></TouchableOpacity>
-                            </View>
+                                <View style={styles.payview} >
+                                    <TouchableOpacity style={styles.payviewbtn}>
+                                   
+                                        <Text style={styles.pay}>  Pay Now</Text>
+                                 
+                                    </TouchableOpacity>
+                                </View>
+                                    </View>
                         </View>
                     </>
                 ))
@@ -106,14 +109,15 @@ const styles = StyleSheet.create({
 
     },
     payview: {
-
-
-        flex: 1,
-        marginLeft: 100,
-        marginTop: 20,
+        flex:.8,
         backgroundColor: '#27ACF8',
-        padding: 10,
-
+        alignItems:'center',
+        justifyContent:'center',
+        borderRadius:20,
+    },
+    payviewbtn: {
+        
+        backgroundColor: '#27ACF8',
     },
     duepayment_view: {
         flexDirection: 'row'
