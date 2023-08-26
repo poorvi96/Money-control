@@ -4,12 +4,26 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import Expense from '../screens/Expense';
 import Payment from '../screens/Payment';
 
+
 const Tab = createMaterialTopTabNavigator();
 export default function TopTabBar() {
     return (
         <>
 
-        <Tab.Navigator>
+        <Tab.Navigator
+         screenOptions={()=>({
+            tabBarActiveTintColor:'white',
+            tabBarIndicatorStyle:{
+                backgroundColor:'white'
+            },
+            tabBarStyle:{
+               backgroundColor:'#27ACF8',
+               
+            
+        
+        }
+        })}
+        >
 
             <Tab.Screen name="Expenses" component={Expense} />
             <Tab.Screen name="Payment" component={Payment} />
