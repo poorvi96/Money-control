@@ -1,11 +1,13 @@
 import React from 'react'
-import { Text, View, StyleSheet, Dimensions, Image } from 'react-native'
+import { Text, View, StyleSheet, Dimensions, Image,TouchableOpacity } from 'react-native'
 import { ExpData } from '../Data/data';
 import { ScrollView } from 'react-native';
 const w = Dimensions.get('screen').width;
 const h = Dimensions.get('screen').height;
-export default function Expense() {
-
+export default function Expense({navigation}) {
+    function showfunc(){
+        navigation.navigate('showcard')
+    }
     function ExpDataShow() {
         return <>
             {
@@ -19,7 +21,9 @@ export default function Expense() {
                                 <Text style={styles.text}>Limit Rs.{d.Limit_Rs}</Text>
                                 <Text style={styles.text}>Expenses Rs.{d.Expense_Rs}</Text>
                                 <View style={styles.ImageView}>
-                                <Image source={d.Eye} style={styles.Image} />
+                                    <TouchableOpacity onPress={showfunc}>          
+                                <Image source={d.Eye} style={styles.Image} />                        
+                                </TouchableOpacity>
                                 </View>
                             </View>
                                 

@@ -1,10 +1,8 @@
 import { useState } from 'react'
 import React from 'react'
-import {Text,View,Dimensions,StyleSheet,TouchableOpacity, Modal,TextInput,Button} from 'react-native'
-import Calendar  from 'react-native-calendars/src/calendar';
+import {Text,View,Dimensions,StyleSheet,TouchableOpacity, ScrollView,Modal,TextInput,Button} from 'react-native'
+import Calendar  from 'react-native-calendars/src/calendar'
 import DropDownPicker from 'react-native-dropdown-picker'
-
-
 
 const w = Dimensions.get('screen').width;
 const h = Dimensions.get('screen').height;
@@ -37,7 +35,9 @@ export default function AmountCard(){
         <>
         
         <View style={styles.container}>
-        
+        <ScrollView>
+
+       
         <View style={styles.textview}>
         <Text style={styles.text}>Add Amount Card</Text>
         </View>
@@ -59,7 +59,7 @@ export default function AmountCard(){
 
         <View>
             <TouchableOpacity onPress={()=>setShowModal(true)} style={styles.touchable}>
-                <Text style={styles.date}>Show Calendar</Text>
+                <Text style={styles.date}> Date</Text>
             </TouchableOpacity>
             <Modal visible={showModal} animationType='fade'>
                 <Calendar style={styles.calendar} onDayPress={date=>{
@@ -100,7 +100,7 @@ export default function AmountCard(){
 
       
 
-
+        </ScrollView>
        
         </View>
         
