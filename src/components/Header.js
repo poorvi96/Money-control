@@ -2,7 +2,13 @@ import React from "react";
 import { Text, View, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 const w = Dimensions.get('screen').width;
 const h = Dimensions.get('screen').height;
-export default function Header() {
+export default function Header(props) {
+
+    function showamount(){
+        console.log(props);
+        const{addcard}=props
+        addcard()
+    }
     return (
         <>
             <View style={styles.header}>
@@ -11,7 +17,7 @@ export default function Header() {
                 </View>
                 
                 <View style={styles.header_right}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={showamount}>
                         <Text style={styles.text}>
                             add
                         </Text>
