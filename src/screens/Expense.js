@@ -1,31 +1,132 @@
 import React from 'react'
-import {Text,View,StyleSheet,Dimensions} from 'react-native'
-const w = Dimensions.get('window').width;
-const h = Dimensions.get('window').height;
-export default function Expense(){
-    return(
-        <View style={styles.userview}>
-                <Text style={styles.usertext}>Hey Poorvi! 2023-08-24</Text>
-            </View>
+import { Text, View, StyleSheet, Dimensions, Image,TouchableOpacity } from 'react-native'
+import { ExpData } from '../Data/data';
+import { ScrollView } from 'react-native';
+const w = Dimensions.get('screen').width;
+const h = Dimensions.get('screen').height;
+export default function Expense({navigation}) {
+    function showfunc(){
+        navigation.navigate('showcard')
+    }
+    function ExpDataShow() {
+        return <>
+            {
+                ExpData.map(d => (
+                    <>
+
+                        <View style={styles.mainView}>
+                            <Text style={styles.card}>{d.card_name}</Text>
+
+                            <View style={styles.textView}>
+                                <Text style={styles.text}>Limit Rs.{d.Limit_Rs}</Text>
+                                <Text style={styles.text}>Expenses Rs.{d.Expense_Rs}</Text>
+                                <View style={styles.ImageView}>
+                                    <TouchableOpacity onPress={showfunc}>          
+                                <Image source={d.Eye} style={styles.Image} />                        
+                                </TouchableOpacity>
+                                </View>
+                            </View>
+                                
+                                
+                          
+
+
+                        </View>
+                    </>
+                ))
+            }
+        </>
+    }
+    return (
+
+        <>
+            <ScrollView>
+                <View style={styles.userview}>
+                    <Text style={styles.usertext}>Hey Poorvi! </Text>
+                </View>
+                {ExpDataShow()}
+            </ScrollView>
+        </>
 
     )
 }
-const styles=StyleSheet.create({
+const styles = StyleSheet.create({
     userview: {
-        backgroundColor: 'green',
-        borderRadius:25,
-        width: w*.9,
+        backgroundColor: '#334d00',
+        borderRadius: 25,
+        width: w * .9,
         height: h * .1,
-        alignItems:'center',
-        marginHorizontal:20,
-        marginVertical:10
+        alignItems: 'center',
+        marginHorizontal: w*.06,
+        marginVertical: w*.04
 
 
     },
     usertext: {
-        fontSize: 20,
-        margin: 20,
-        color: 'white', 
+        fontSize: w*.06,
+        margin: w*.05,
+        color: 'white',
     },
+    mainView: {
+        width: w * .9,
+        height: h * .25,
+        borderRadius:30,
+        // marginLeft:20,
+        marginLeft:w*.06,
+        marginVertical:w*.03,
+        alignItems: 'center',
+        backgroundColor: '#454A8C',
+        
+        // marginTop:30
+    },
+    card:{
+        width:w*.4,
+        height:h*.04,
+        marginTop:w*.09,
+        fontSize:w*.06,
+        textAlign:'center',
+        color:'black',
+        backgroundColor:'yellow'
+
+    },
+    textView:{
+
+        flexDirection:'row'
+
+       
+    },
+    RsView:{
+        flexDirection:'row',
+       
+        right:w*.04,
+        
+        
+    },
+    text:{
+         marginHorizontal:w*.06,
+        marginVertical:h*.035,
+        color:'white',
+        flex:w*.05
+       
+    },
+    Rs:{
+        marginHorizontal:w*.03,
+        color:'white',
+       // left
+    },
+    ImageView:{
+        height:h*.06,
+      width:w*.2,
+        backgroundColor:'#3377ff',
+        borderRadius:10,
+        alignItems:'center',
+        justifyContent:'center',
+        top:h*.02,
+        marginVertical:h*.01,
+        marginHorizontal:w*.03,
+      
+    },
+    
+
 
 })
