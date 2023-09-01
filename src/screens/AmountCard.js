@@ -83,30 +83,28 @@ console.log(params);
 
 
         <View>
-<<<<<<< HEAD
+
             <View style={{}}>
           {/* <Text style={styles.date}>{date}</Text>
            */} 
-            <TouchableOpacity onPress={()=>setShowModal(true)} style={styles.touchable}>
-               
-=======
+           
            
             <TouchableOpacity onPress={()=>setShowModal(true)} style={styles.touchable}>
                 <Text style={styles.date}>{date?date:"Date"}</Text>
->>>>>>> 8780a299fd8c15f5049be6b6ac3f7ee967bd50d7
+
             </TouchableOpacity>
             </View>
             <Modal visible={showModal} animationType='fade'>
                 <Calendar style={styles.calendar} onDayPress={date=>{
-<<<<<<< HEAD
+
                     console.log(date)
                     setDate(date.dateString)
-=======
+
                    
                    setDate(date.dateString)
                    
                     
->>>>>>> 8780a299fd8c15f5049be6b6ac3f7ee967bd50d7
+
                     setShowModal(false)}}
                     onMonthChange={()=>{}}
                     initialDate={'2022-09-19'}/>
