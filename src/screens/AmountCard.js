@@ -9,6 +9,7 @@ const h = Dimensions.get('screen').height;
 export default function AmountCard(){
     const[isOpen,setIsOpen]=useState(false)
     const[currentValue,setCurrentValue]=useState()
+ 
 
     const items=[
       {label:'Expenses',value:'Expenses'},
@@ -58,12 +59,17 @@ export default function AmountCard(){
 
 
         <View>
+            <View style={{}}>
+          {/* <Text style={styles.date}>{date}</Text>
+           */} 
             <TouchableOpacity onPress={()=>setShowModal(true)} style={styles.touchable}>
-                <Text style={styles.date}> Date</Text>
+               
             </TouchableOpacity>
+            </View>
             <Modal visible={showModal} animationType='fade'>
                 <Calendar style={styles.calendar} onDayPress={date=>{
                     console.log(date)
+                    setDate(date.dateString)
                     setShowModal(false)}}
                     onMonthChange={()=>{}}
                     initialDate={'2022-09-19'}/>
@@ -167,6 +173,16 @@ des_view:{
 btn:{
 margin:h*.08,
 },
+dateview:{
+    flex:1,
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'center',
+    borderRadius:'10',
+    borderColor:'#000',
+    borderBlockColor:'red'
+
+}
 
 
 
