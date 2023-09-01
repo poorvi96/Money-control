@@ -33,7 +33,7 @@ export default function AmountCard({navigation}){
     const[showModal,setShowModal]=useState(false);
 
     
-  function submit(){
+function submit(){
 const params={
     currentValue,
     date,
