@@ -1,17 +1,15 @@
 import React from "react";
 import { Text, View, Image, StyleSheet, ScrollView,Dimensions } from "react-native";
 import { CardData } from "../Data/data";
-
+import { TouchableOpacity } from "react-native-gesture-handler";
 const w = Dimensions.get('screen').width;
 const h = Dimensions.get('screen').height;
-export default function ShowCard() {
+export default function ShowCard({navigation}) {
+   
     function CardDataShow() {
 
         return (
             <>
-          
-
-          
                 <View style={styles.TextView}>
 
                     <Text style={styles.SrText}>SrNo</Text>
@@ -28,7 +26,8 @@ export default function ShowCard() {
                                 <Text style={styles.text}>{d.Date}</Text>
                                 <Text style={styles.text}>{d.Amount}</Text>
                                 <Text style={styles.text}>{d.Info}</Text>
-                                <Image source={d.Show} style={styles.text} />
+                                <TouchableOpacity onPress={()=>navigation.navigate("showdata",{...d})}>
+                                <Image source={d.Show}style={styles.text} /></TouchableOpacity>
                             </View>
 
                         </View>

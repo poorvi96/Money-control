@@ -6,10 +6,13 @@ import DropDownPicker from 'react-native-dropdown-picker'
 
 const w = Dimensions.get('screen').width;
 const h = Dimensions.get('screen').height;
-export default function AmountCard(){
+export default function AmountCard({navigation}){
+    const[amt,setamt]=useState("")
+    const[info,setinfo]=useState("")
     const[isOpen,setIsOpen]=useState(false)
     const[currentValue,setCurrentValue]=useState()
-
+    const[date,setDate]=useState()
+  
     const items=[
       {label:'Expenses',value:'Expenses'},
       {label:'Payment',value:'payment'},
@@ -18,6 +21,7 @@ export default function AmountCard(){
 
     const[isOpen1,setIsOpen1]=useState(false)
     const[currentValue1,setCurrentValue1]=useState()
+    // console.log(currentValue1);
 
     const item=[
         {label:'HDFC-CARD',value:'HDFC-CARD'},
@@ -29,7 +33,19 @@ export default function AmountCard(){
     const[showModal,setShowModal]=useState(false);
 
     
-  
+  function submit(){
+const params={
+    currentValue,
+    date,
+    currentValue1,
+    amt,
+    info
+
+}
+navigation.navigate("homescreen")
+
+console.log(params);
+  }
 
     return(
         <>
@@ -42,28 +58,38 @@ export default function AmountCard(){
         <Text style={styles.text}>Add Amount Card</Text>
         </View>
         <View style={{padding:h*.03}}>
-            <DropDownPicker 
+            <DropDownPicker
+          
             items={items}
              open={isOpen}
               setOpen={()=>setIsOpen(!isOpen)}
               value={currentValue}
+              
               setValue={(val)=>setCurrentValue(val)}
+            
+          
               maxHeight={h*.12}
               autoScroll
               placeholder="Select type"
               placeholderStyle={{color:'black',fontWeight:'bold'}}
+             
               />
+         
 
         </View>
 
 
         <View>
+           
             <TouchableOpacity onPress={()=>setShowModal(true)} style={styles.touchable}>
-                <Text style={styles.date}> Date</Text>
+                <Text style={styles.date}>{date?date:"Date"}</Text>
             </TouchableOpacity>
             <Modal visible={showModal} animationType='fade'>
                 <Calendar style={styles.calendar} onDayPress={date=>{
-                    console.log(date)
+                   
+                   setDate(date.dateString)
+                   
+                    
                     setShowModal(false)}}
                     onMonthChange={()=>{}}
                     initialDate={'2022-09-19'}/>
@@ -87,20 +113,22 @@ export default function AmountCard(){
         </View>
 
         <View style={styles.amt_view}>
-            <TextInput placeholder='Enter Amount....' style={styles.input_amt}/>
+            <TextInput value={amt} onChangeText={d => setamt(d)} placeholder='Enter Amount....' style={styles.input_amt}/>
         </View>
 
         <View style={styles.des_view}>
-            <TextInput placeholder='Enter payment info....' style={styles.input_des}/>
+            <TextInput value={info} onChangeText={d => setinfo(d)} placeholder='Enter payment info....' style={styles.input_des}/>
         </View>
         
         <View style={styles.btn}>
-        <Button title='sumbit'/>
+        <Button onPress={submit}title='sumbit'/>
         </View>
 
       
 
         </ScrollView>
+       
+        
        
         </View>
         
