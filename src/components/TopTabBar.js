@@ -4,7 +4,6 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import Expense from '../screens/Expense';
 import PaymentScreen from '../screens/PaymentScreen';
 
-
 const Tab = createMaterialTopTabNavigator();
 export default function TopTabBar() {
     return (
