@@ -11,9 +11,6 @@ export default function AmountCard({navigation}){
     const[info,setinfo]=useState("")
     const[isOpen,setIsOpen]=useState(false)
     const[currentValue,setCurrentValue]=useState()
- 
-
-
     const[date,setDate]=useState()
 
     const items=[
@@ -45,7 +42,12 @@ const params={
     info
 
 }
-navigation.navigate("homescreen")
+
+navigation.navigate("expense",params)
+//navigation.push("Expense",params)
+
+
+
 
 console.log(params);
   }

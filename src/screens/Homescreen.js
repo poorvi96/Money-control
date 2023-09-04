@@ -17,6 +17,7 @@ export default function Homescreen({navigation}) {
 
 function showcard(){
     navigation.navigate('amountcard')
+    
 }
     return (
         <>

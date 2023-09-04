@@ -1,10 +1,17 @@
 import React from 'react'
 import { Text, View, StyleSheet, Dimensions, Image,TouchableOpacity } from 'react-native'
+import * as Progress from 'react-native-progress';
 import { ExpData } from '../Data/data';
 import { ScrollView } from 'react-native';
 const w = Dimensions.get('screen').width;
 const h = Dimensions.get('screen').height;
-export default function Expense({navigation}) {
+export default function Expense({route,navigation}) {
+    const{amt}=route
+    const Limit=50000
+    let per=((amt/Limit)*100)
+    console.log(amt);
+    console.log(route);
+
     function showfunc(){
         navigation.navigate('showcard')
     }
@@ -17,20 +24,22 @@ export default function Expense({navigation}) {
                         <View style={styles.mainView}>
                             <Text style={styles.card}>{d.card_name}</Text>
 
-                            <View style={styles.textView}>
-                                <Text style={styles.text}>Limit Rs.{d.Limit_Rs}</Text>
-                                <Text style={styles.text}>Expenses Rs.{d.Expense_Rs}</Text>
+
+                            <View style={styles.progressView}>
+
+                                <Progress.Bar progress={0.2} width={w*.5} style={{marginTop:57}}/>
+
+
+                                {/* <View style={styles.textView}> */}
+                                {/* <Text style={styles.text}>Limit Rs.{d.Limit_Rs}</Text>
+                                <Text style={styles.text}>Expenses Rs.{d.Expense_Rs}</Text> */}
                                 <View style={styles.ImageView}>
                                     <TouchableOpacity onPress={showfunc}>          
                                 <Image source={d.Eye} style={styles.Image} />                        
                                 </TouchableOpacity>
                                 </View>
-                            </View>
-                                
-                                
-                          
-
-
+                             </View>
+                            {/* </View> */}                
                         </View>
                     </>
                 ))
@@ -51,6 +60,12 @@ export default function Expense({navigation}) {
     )
 }
 const styles = StyleSheet.create({
+    progressView:{
+        
+       flexDirection:'row'
+
+
+    },
     userview: {
         backgroundColor: '#334d00',
         borderRadius: 25,
@@ -122,7 +137,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center',
         top:h*.02,
-        marginVertical:h*.01,
+       marginTop:w*.05,
         marginHorizontal:w*.03,
       
     },
