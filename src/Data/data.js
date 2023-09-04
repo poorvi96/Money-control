@@ -1,3 +1,4 @@
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
 export const product=[
    
@@ -31,4 +32,12 @@ export const CardData=[
     {SrNo:6, Date:"6-09-2023",Amount:5000,Info:"bank",Show:require('../images/icons/eye.png')},
     {SrNo:7, Date:"9-09-2023",Amount:2000,Info:"market",Show:require('../images/icons/eye.png')},
     {SrNo:8, Date:"10-09-2023",Amount:1000,Info:"dmart",Show:require('../images/icons/eye.png')},
+]
+export const imageDataURL=[
+    'https://cdn.vectorstock.com/i/preview-1x/15/40/blank-profile-picture-image-holder-with-a-crown-vector-42411540.jpg'
+]
+export const userinfo=[
+  {Icon:require('../images/icons/address.png'),address:"Jaipur,rajasthan"},
+  {Icon:require('../images/icons/call.png'),address:"+91-9000000000"},
+  {Icon:require('../images/icons/email.png'),address:"poorvi@gmail.com"},
 ]
