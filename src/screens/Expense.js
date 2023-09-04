@@ -6,7 +6,7 @@ import { ScrollView } from 'react-native';
 const w = Dimensions.get('screen').width;
 const h = Dimensions.get('screen').height;
 export default function Expense({route,navigation}) {
-    const{amt}=route
+    const{amt}=route.params
     const Limit=50000
     let per=((amt/Limit)*100)
     console.log(amt);
